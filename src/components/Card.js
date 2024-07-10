@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@mui/material";
-
 const Card = ({ img, title, price, addToCart }) => {
   return (
     <section className="card">

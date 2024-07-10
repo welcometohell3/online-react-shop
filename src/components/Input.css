@@ -1,0 +1,22 @@
+/* .filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter input {
+  margin-right: 10px;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.filter input:checked + .checkmark {
+  background-color: #2196f3;
+} */
