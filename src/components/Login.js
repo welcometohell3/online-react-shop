@@ -20,6 +20,7 @@ const Login = ({ user }) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      navigate("/account");
     } catch (error) {
       setError(error.message);
     }
@@ -45,7 +46,7 @@ const Login = ({ user }) => {
         />
         <button type="submit">Войти</button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="error">Неверный логин или пароль</p>}
 
       <p className="enter">
         Нет аккаунта? <Link to="/register">Зарегистрируйтесь</Link>

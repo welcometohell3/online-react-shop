@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "../firebaseConfig";
-import "./Acc.css";
+import { auth } from "../../firebaseConfig";
+import "./Account.css";
 
 const Account = ({ user }) => {
   const navigate = useNavigate();
 
-  // Эффект для перенаправления на страницу входа, если пользователь не авторизован
   useEffect(() => {
     if (!user) {
       navigate("/login");
@@ -24,7 +23,7 @@ const Account = ({ user }) => {
   };
 
   if (!user) {
-    return null; // Возвращаем null, чтобы не отображать содержимое, если нет пользователя
+    return null;
   }
 
   return (

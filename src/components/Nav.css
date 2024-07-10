@@ -5,6 +5,33 @@
   padding: 10px 20px;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.store-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 20px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
@@ -16,4 +43,23 @@
 
 .icon {
   vertical-align: middle;
+}
+
+.search-form {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 50%;
+  max-width: 500px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.content {
+  padding-top: 60px;
 }
