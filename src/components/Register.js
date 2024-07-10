@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import "./Login.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +19,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h2>Регистрация</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -37,6 +39,9 @@ const Register = () => {
         <button type="submit">Зарегистрироваться</button>
       </form>
       {error && <p>{error}</p>}
+      <p className="enter">
+        Уже есть аккаунт? <Link to="/login">Войдите</Link>
+      </p>
     </div>
   );
 };

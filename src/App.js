@@ -6,7 +6,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
 import Home from "./components/Home";
-import Navigation from "./components/Navigation";
+import Account from "./components/Acc";
+import Nav from "./components/Nav";
 import data from "./db/data";
 import "./components/index.css";
 
@@ -47,7 +48,7 @@ function App() {
 
   return (
     <Router>
-      <Navigation handleInputChange={handleInputChange} query={query} />
+      <Nav handleInputChange={handleInputChange} query={query} user={user} />
       <div className="app-container">
         <Routes>
           <Route
@@ -73,6 +74,7 @@ function App() {
               />
             }
           />
+          <Route path="/account" element={<Account user={user} />} />
         </Routes>
       </div>
     </Router>
