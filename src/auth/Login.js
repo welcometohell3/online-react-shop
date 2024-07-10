@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 
-const Register = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -10,7 +10,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       setError(error.message);
     }
@@ -18,7 +18,7 @@ const Register = () => {
 
   return (
     <div>
-      <h2>Регистрация</h2>
+      <h2>Авторизация</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -34,11 +34,11 @@ const Register = () => {
           placeholder="Пароль"
           required
         />
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit">Войти</button>
       </form>
       {error && <p>{error}</p>}
     </div>
   );
 };
 
-export default Register;
+export default Login;

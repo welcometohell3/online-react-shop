@@ -1,16 +1,21 @@
 import { useState } from "react";
-import Card from "./products/Card";
-import Sidebar from "./nav/Sidebar";
+import Card from "../components/Card";
+import Sidebar from "./sidebar/Sidebar";
 import Products from "./products/Products";
-import products from "../../db/data";
+import products from "../db/data";
+import Navigation from "./nav/Navigation";
+import "./index.css";
 
 const Home = ({ addToCart }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [query] = useState("");
+  const [query, setQuery] = useState("");
 
   const filteredItems = products.filter(
     (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
   );
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
 
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -45,6 +50,7 @@ const Home = ({ addToCart }) => {
   return (
     <div>
       <Sidebar handleChange={handleChange} />
+      <Navigation query={query} handleInputChange={handleInputChange} />
       <Products result={result} />
     </div>
   );

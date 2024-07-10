@@ -19,8 +19,10 @@ input {
   width: 14rem;
 }
 
-.nav-icons {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-left: 2rem;
+.icon {
+  font-size: 30px;
+}
+
+.nav-link {
+  margin: 5px;
 }

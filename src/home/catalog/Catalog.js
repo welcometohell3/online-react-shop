@@ -1,5 +1,5 @@
 import "./Catalog.css";
-import Input from "../nav/Input";
+import Input from "../../components/Input";
 
 function Catalog({ handleChange }) {
   return (

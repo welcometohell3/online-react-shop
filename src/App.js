@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 
-import Navigation from "./components/home/nav/Navigation";
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
-import Cart from "./components/Cart";
-import Home from "./components/home/Home";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
+import Cart from "./cart/Cart";
+import Home from "./home/Home";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -32,7 +31,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Navigation />
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart} />} />
           <Route path="/login" element={<Login />} />

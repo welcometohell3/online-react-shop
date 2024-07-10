@@ -1,5 +1,5 @@
-import Catalog from "../products/Catalog";
-import "../../../styles/Sidebar.css";
+import Catalog from "../catalog/Catalog";
+import "./Sidebar.css";
 
 const Sidebar = ({ handleChange }) => {
   return (
